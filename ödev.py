@@ -1,48 +1,54 @@
 #1-Kullanıcının girdiği boy ve ağırlık değerlerine göre vücut kitle indeksini (VKİ = ağırlık/(boy*boy)) hesaplayınız.
-print("Vücut kitle indeksi")
-boy = float(input("Boy:"))
-kilo = int(input("Kilo:"))
-endeks = kilo /(boy*boy)
-vucut=f"Vücut kitle indeksiniz: {endeks}"
-print(vucut)
+print("Vücut kitle indeksinizi bulan program")
+print()
+boy = float(input("Boyunuzu giriniz(örn: 1.80) :"))
+kilo = int(input("Kilonuzu giriniz (örn: 75) :"))
+endeks = float(kilo /(boy*boy))
+formatliEndeks=f"{endeks:.2f}"
+vucutIndeksi=f"Vücut kitle indeksiniz: {formatliEndeks} olarak hesaplanmıştır"
+print(vucutIndeksi)
 
 #2-Maaşı ve zam oranı girilen işçinin zamlı maaşını hesaplayarak ekranda gösteriniz.
-print("Maaş ve zam oranını giriniz")
-maas = int(input("Maaşı giriniz: "))
+print("Maaş ve zam oranını girerek yeni maaşınızı hesaplayan program")
+print()
+maas = int(input("Maaşınızı giriniz: "))
 zamOrani=float(input("Zam oranını tam sayı olarak giriniz: "))
 zamliMaas= float(maas+maas*(zamOrani/100))
 print("Zamlı  maaşınız: ",zamliMaas," TL")
 
 #3-Kullanıcının girdiği üç sayı arasında en büyük olanı bulan ve sonucu yazdıran bir program yazınız.
-print("Üç adet tam sayı giriniz")
-birinciTamsayi=int(input("birinci tam sayıyı giriniz: "))
-ikinciTamsayi=int(input("ikinci tam sayıyı giriniz: "))
-ucuncuTamsayi=int(input("üçüncü tam sayıyı giriniz: "))
+print("Girilen 3 sayıdan en büyüğünü bulan program")
+print()
+birinciTamsayi=int(input("birinci sayıyı giriniz: "))
+ikinciTamsayi=int(input("ikinci sayıyı giriniz: "))
+ucuncuTamsayi=int(input("üçüncü sayıyı giriniz: "))
 enBuyukSayi=max(birinciTamsayi,ikinciTamsayi,ucuncuTamsayi)
-print("En büyük tam sayı: ",enBuyukSayi)
+print("Girilen en büyük sayı: ",enBuyukSayi)
   
 #4-Dairenin alanını ve çevresini hesaplayan python kodunu yazınız.(Dairenin yarıçapını kullanıcıdan alınız)
-print("dairenin yarı çapını giriniz")
-yariCap=float(input("yarı çap değeri giriniz:"))
+print("Dairenin alanı ve çevresini heseplayan program")
+print()
+yariCap=float(input("Dairenin yarı çapını giriniz (cm) : "))
 pi=3.14
 daireAlani=pi*yariCap*yariCap
-daireCevre=2*pi*yariCap
-print("Dairenin Alanı =",daireAlani)
-print("Dairenin Çevresi=",daireCevre)
+daireCevre=f"{(2*pi*yariCap):.2f}"
+print("Dairenin Alanı =",daireAlani, " cm  karedir")
+print("Dairenin Çevresi=",daireCevre, " cm dir")
 
 #5-Kullanıcıdan alınan bir sayının palindrom olup olmadığını bulan bir program yazınız.
-sayi=(input("sayıyı giriniz:"))
+print("Girilen tam sayının panlindrom olup olmadığını bulan program")
+print()
+sayi=(input("lütfen bir tam sayı giriniz:"))
 
 tersten = "" 
 for rakam in sayi:
     tersten = rakam + tersten
     
-print(tersten)
+print ()   
 if tersten==sayi:
-    print(sayi,"Sayısı Palindromdur")
+    print(sayi,"Sayısı Palindrom bir sayıdır")
 else:
-    print(sayi,"Sayısı Palindrom değildir")    
+    print(sayi,"Sayısı Palindrom bir sayı değildir")    
 
-#github'a ekleme yapalım, linkleri paylaşalım lütfen 🙂
 
 

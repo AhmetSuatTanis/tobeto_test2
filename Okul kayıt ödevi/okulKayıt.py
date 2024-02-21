@@ -8,52 +8,51 @@
 from student import Student
 from teacher import Teacher
 
-ogrenciListesi= []
-ogretmenListesi= []
+ogrenciListesi=[]
+ogretmenListesi=[]
 
-def ogrenciEkle(*args):
-    for student in args:
-        ogrenciListesi.append(student)
-
-def ogretmenEkle(*args):
-    for teacher in args:
-        ogretmenListesi.append(teacher)
-
-def tumOgrencileriGoster():
-    print("Tüm öğrencilerin listesi:")
+def addStudent(isim,soyisim,vize,final,bolum):
+    
+    newStudent=Student(isim,soyisim,vize,final,bolum)
+    ogrenciListesi.append(newStudent)
+    
+    
+def printStudent():
+    print("Ögrenci Listesi:")
     print()
-    for ogrenci in ogrenciListesi:
-        ogrenci.bilgi()
+    for student in ogrenciListesi:
+        student.bilgi()
+        print(f"ortalama notu",int(student.ortalamaHesaplama()))
 
-def tumOgretmenleriGoster():
-    print("Tüm öğretmenlerin listesi:")
+def addTeacher(isim,soyisim,bolum,maas,zamOrani):
+
+    newTeacher=Teacher(isim,soyisim,bolum,maas,zamOrani)
+    ogretmenListesi.append(newTeacher)
+
+def printTeacher():
     print()
-    for ogretmen in ogretmenListesi:
-        ogretmen.bilgi()
+    print("Öğretmen Listesi:")
+    print()
+    for teacher in ogretmenListesi:
+        teacher.bilgi()
+        eskiMaas=teacher.maas
+        print(f"Eski maaş=",eskiMaas, "TL")
+        print(f"zamli maas=", int(teacher.zamliMaas()),"TL")
 
 
-student1=Student("Ayşe", "Yılmaz","Sayısal")
-student2=Student("Mevlüt", "Kar","Sözel")
-student3=Student("Turan", "Yakın","Eşit ağırlık")
-student4=Student("Azize", "Dönmez","Sayısal")
+addStudent("Nesibe","Kaya",70,90,"Sayısal")
+addStudent("Ahmet","Tanış",50,70,"Sözel")
+addStudent("Mehmet","Kurt",65,75,"Eşit ağırlık")
+addStudent("Ali","Öztürk",60,85,"Sayısal")
+addStudent("Merve","Yılmaz",50,90,"Eşit Ağırlık")
 
-teacher1= Teacher("Nesibe", "Kaya", "Matematik")
-teacher2= Teacher("Ahmet", "Tanış", "Fizik")
-teacher3= Teacher("Özlem", "Akman", "Edebiyat")
-teacher4= Teacher("Kevser", "Yılmaz", "Kimya")
+addTeacher("Özlem","Akman","Matematik",20000,30)
+addTeacher("Emir","Yılmaz","Fizik",15000,20)
+addTeacher("Reyhan","Akman","Kimya",20000,30)
+addTeacher("Nihat","Nurdağ","Edebiyat",15000,30)
+addTeacher("Kevser","Yılmaz","Türkçe",17000,30)
 
-ogrenciEkle(student1,student2,student3,student4)
-# ogrenciEkle(student1)
-# ogrenciEkle(student2)
-# ogrenciEkle(student3)
-# ogrenciEkle(student4)
+printStudent()
+printTeacher()
 
-ogretmenEkle(teacher1,teacher2,teacher3,teacher4)
-# ogretmenEkle(teacher1)
-# ogretmenEkle(teacher2)
-# ogretmenEkle(teacher3)
-# ogretmenEkle(teacher4)
 
-tumOgrencileriGoster()
-print()
-tumOgretmenleriGoster()

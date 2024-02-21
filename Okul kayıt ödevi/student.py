@@ -6,8 +6,6 @@ class Student:
         self.final=final
         self.bolum=bolum
     
-
-
     def bilgi(self):
         print(f"öğrenci adı soyadı: {self.isim} {self.soyisim} -->Bölümü: {self.bolum}")
     
